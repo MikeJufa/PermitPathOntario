@@ -640,14 +640,14 @@ footer p{font-size:12px;color:var(--text-mute)}
       </div>
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <div class="field-group">
-          <div class="field"><label>First name</label><input type="text" placeholder="John" required/></div>
-          <div class="field"><label>Last name</label><input type="text" placeholder="Smith" required/></div>
+          <div class="field"><label>First name</label><input type="text" name="first_name" placeholder="John" required/></div>
+          <div class="field"><label>Last name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
         </div>
-        <div class="field"><label>Email address</label><input type="email" placeholder="you@email.com" required/></div>
-        <div class="field"><label>Property address</label><input type="text" placeholder="123 Elm St, Mississauga, ON"/></div>
+        <div class="field"><label>Email address</label><input type="email" name="email" placeholder="you@email.com" required/></div>
+        <div class="field"><label>Property address</label><input type="text" name="property_address" placeholder="123 Elm St, Mississauga, ON"/></div>
         <div class="field">
           <label>Project type</label>
-          <select>
+          <select name="project_type">
             <option value="" disabled selected>Select a project type</option>
             <option>Legal Basement Suite</option>
             <option>Garden Suite / ADU</option>
@@ -658,7 +658,7 @@ footer p{font-size:12px;color:var(--text-mute)}
             <option>Other</option>
           </select>
         </div>
-        <div class="field"><label>Tell us about your project</label><textarea placeholder="Describe what you'd like to build, your timeline, and any concerns about zoning or code compliance..."></textarea></div>
+        <div class="field"><label>Tell us about your project</label><textarea name="message" placeholder="Describe what you'd like to build, your timeline, and any concerns about zoning or code compliance..."></textarea></div>
         <button type="submit" class="btn-submit">Send message →</button>
       </form>
     </div>
@@ -680,7 +680,41 @@ footer p{font-size:12px;color:var(--text-mute)}
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function handleSubmit(e){
   e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit')
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const data = new FormData(form);
+  data.append('_subject', 'New enquiry — Permit Path Ontario');
+  data.append('_captcha', 'false');
+
+  fetch('https://formsubmit.co/ajax/zfonline626@gmail.com', {
+    method: 'POST',
+    headers: {'Accept': 'application/json'},
+    body: data
+  })
+  .then(r => r.json())
+  .then(res => {
+    if(res.success === 'true' || res.success === true){
+      btn.textContent = 'Message sent ✓';
+      btn.style.background = '#2a7a4b';
+      form.reset();
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Send message →';
+      alert('Something went wrong. Please try again or call us directly.');
+    }
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.textContent = 'Send message →';
+    alert('Network error. Please try again or call us directly.');
+  });
+}
+</script>
+</body>
+</html>
