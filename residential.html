@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Permit Path Ontario — BCIN Registered Designer, GTA (Greater Toronto Area)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:       #ffffff;
+  --surface:  #f9f7f4;
+  --card:     #ffffff;
+  --border:   #e8e4de;
+  --text:     #1a1a1a;
+  --text-dim: #6b6660;
+  --text-mute:#a09b95;
+  --blue:     #1a3a5c;
+  --blue-mid: #2558a0;
+  --blue-lt:  #dde8f5;
+  --accent:   #c47c3e;
+  --accent-lt:#fdf3e8;
+  --radius:   12px;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Sora',sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.logo{
+  font-family:'Sora',sans-serif;
+  font-size:15px;font-weight:600;letter-spacing:.06em;
+  color:var(--text);text-decoration:none;text-transform:uppercase;
+}
+.logo span{color:var(--accent)}
+nav ul{list-style:none;display:flex;gap:8px;align-items:center}
+nav a{
+  text-decoration:none;color:var(--text-dim);
+  font-size:13px;font-weight:400;
+  padding:6px 14px;border-radius:6px;
+  transition:all .2s;
+}
+nav a:hover{background:var(--surface);color:var(--text)}
+.nav-cta{
+  background:var(--blue) !important;
+  color:#fff !important;
+  font-weight:500 !important;
+  padding:8px 20px !important;
+}
+.nav-cta:hover{background:var(--blue-mid) !important;color:#fff !important}
+
+/* ── HERO ── */
+#hero{
+  padding:100px 48px 80px;
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-lt);
+  border:1px solid rgba(196,124,62,0.2);
+  padding:6px 14px;border-radius:100px;
+  font-size:12px;font-weight:500;color:var(--accent);
+  margin-bottom:24px;
+}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(38px,4.5vw,58px);
+  font-weight:600;line-height:1.12;
+  letter-spacing:-.02em;color:var(--text);
+  margin-bottom:20px;
+}
+h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--blue-mid) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-desc{
+  font-size:16px;color:var(--text-dim);line-height:1.8;
+  margin-bottom:36px;max-width:480px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 28px;border-radius:8px;
+  background:var(--blue);color:#fff;
+  text-decoration:none;font-size:14px;font-weight:500;
+  transition:all .2s;
+}
+.btn-primary:hover{background:var(--blue-mid);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,58,92,0.2)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:8px;
+  border:1px solid var(--border);color:var(--text-dim);
+  text-decoration:none;font-size:14px;font-weight:400;
+  transition:all .2s;
+}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+
+/* Hero image */
+.hero-visual{
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.1);
+  border:1px solid var(--border);
+  aspect-ratio:4/3;
+}
+.hero-visual img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ── STRIP ── */
+.stats-strip{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:32px 48px;
+  display:flex;justify-content:center;gap:0;
+}
+.stat-item{
+  display:flex;flex-direction:column;align-items:center;
+  padding:0 56px;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none}
+.stat-n{
+  font-family:'Sora',sans-serif;
+  font-size:32px;font-weight:600;
+  color:var(--text);letter-spacing:-.02em;
+}
+.stat-l{font-size:12px;color:var(--text-mute);margin-top:2px;font-weight:400}
+
+/* ── SECTION SHARED ── */
+.section-inner{max-width:1200px;margin:0 auto;padding:80px 48px}
+.sec-label{
+  display:inline-block;
+  font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;
+}
+h2{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(28px,3.5vw,42px);
+  font-weight:600;line-height:1.15;color:var(--text);
+  letter-spacing:-.02em;
+}
+h2 em{
+  font-style:italic;font-family:'Lora',serif;font-weight:400;
+  color:var(--blue-mid);
+}
+.section-desc{
+  font-size:16px;color:var(--text-dim);line-height:1.8;
+  max-width:560px;margin-top:12px;
+}
+
+/* ── SERVICES ── */
+#services{background:var(--bg)}
+.services-top{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:48px;gap:40px;flex-wrap:wrap;
+}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.service-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  transition:all .25s;cursor:default;
+}
+.service-card:hover{
+  border-color:rgba(26,58,92,0.25);
+  box-shadow:0 8px 32px rgba(0,0,0,0.06);
+  transform:translateY(-2px);
+}
+.s-icon{
+  width:40px;height:40px;border-radius:8px;
+  background:var(--blue-lt);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin-bottom:20px;
+  color:var(--blue);
+}
+.service-card h3{
+  font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px;
+}
+.service-card p{font-size:13px;color:var(--text-dim);line-height:1.7}
+.s-num{font-size:11px;color:var(--text-mute);margin-bottom:6px;font-weight:500}
+
+/* ── FEATURED PROJECT ── */
+#projects{background:var(--surface);border-top:1px solid var(--border)}
+.project-feature{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;align-items:center;margin-top:48px;
+}
+.project-img-wrap{
+  border-radius:16px;overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 24px 64px rgba(0,0,0,0.08);
+}
+.project-img-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.project-tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tag{
+  display:inline-block;padding:4px 12px;border-radius:100px;
+  font-size:11px;font-weight:500;letter-spacing:.04em;
+  background:var(--blue-lt);color:var(--blue);
+}
+.project-feature h3{
+  font-family:'Sora',sans-serif;
+  font-size:28px;font-weight:600;color:var(--text);
+  letter-spacing:-.015em;margin-bottom:12px;line-height:1.2;
+}
+.project-feature > div > p{font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:28px}
+.project-detail-list{display:flex;flex-direction:column;gap:0;margin-bottom:32px}
+.dl-item{
+  display:flex;justify-content:space-between;
+  padding:11px 0;border-bottom:1px solid var(--border);
+  font-size:13px;
+}
+.dl-item:first-child{border-top:1px solid var(--border)}
+.dl-key{color:var(--text-mute);font-weight:400}
+.dl-val{color:var(--text);font-weight:500}
+
+/* ── PROCESS ── */
+#process{background:var(--bg);border-top:1px solid var(--border)}
+.process-top{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:48px;gap:40px;flex-wrap:wrap;
+}
+.process-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:16px;
+}
+.step-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px 20px;
+  position:relative;
+}
+.step-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-mid));
+  border-radius:var(--radius) var(--radius) 0 0;
+  opacity:0;transition:opacity .25s;
+}
+.step-card:hover::before{opacity:1}
+.step-n{
+  font-size:11px;font-weight:600;letter-spacing:.08em;
+  color:var(--text-mute);text-transform:uppercase;margin-bottom:12px;
+}
+.step-card h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px}
+.step-card p{font-size:12px;color:var(--text-dim);line-height:1.7}
+
+/* ── ABOUT ── */
+#about{background:var(--blue);border-top:1px solid rgba(255,255,255,0.1)}
+#about .section-inner{padding:80px 48px}
+#about .sec-label{color:rgba(255,255,255,0.5)}
+#about h2{color:#fff}
+#about h2 em{color:rgba(255,255,255,0.7)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;margin-top:48px;align-items:start;
+}
+.about-left p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:18px}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius);overflow:hidden;
+  margin-top:36px;
+}
+.as-box{
+  padding:24px 20px;background:rgba(255,255,255,0.05);
+}
+.as-n{
+  font-size:34px;font-weight:600;color:#fff;
+  letter-spacing:-.02em;line-height:1;
+}
+.as-l{font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:.04em}
+.about-right{}
+.values-list{display:flex;flex-direction:column;gap:12px}
+.value-item{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;
+  padding:20px 22px;
+}
+.value-item h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.value-item p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg);border-top:1px solid var(--border)}
+.contact-grid{
+  display:grid;grid-template-columns:5fr 7fr;
+  gap:80px;margin-top:48px;
+}
+.contact-left h3{
+  font-size:18px;font-weight:600;color:var(--text);
+  margin-bottom:20px;line-height:1.4;
+}
+.contact-left p{font-size:14px;color:var(--text-dim);line-height:1.8;margin-bottom:28px}
+.contact-chips{display:flex;flex-direction:column;gap:12px}
+.chip{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 16px;border-radius:10px;
+  background:var(--surface);border:1px solid var(--border);
+}
+.chip-icon{
+  width:32px;height:32px;border-radius:7px;
+  background:var(--blue-lt);display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;color:var(--blue);
+}
+.chip-body{}
+.chip-label{font-size:11px;color:var(--text-mute);font-weight:500;letter-spacing:.04em;margin-bottom:2px}
+.chip-val{font-size:13px;color:var(--text);font-weight:500}
+
+/* Form */
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.field-group{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;font-weight:500;color:var(--text);letter-spacing:.02em}
+input,textarea,select{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:11px 14px;
+  color:var(--text);
+  font-family:'Sora',sans-serif;font-size:14px;
+  outline:none;transition:border-color .2s,box-shadow .2s;
+  width:100%;
+}
+input:focus,textarea:focus,select:focus{
+  border-color:var(--blue-mid);
+  box-shadow:0 0 0 3px rgba(37,88,160,0.1);
+}
+input::placeholder,textarea::placeholder{color:var(--text-mute)}
+select{appearance:none;cursor:pointer}
+select option{background:#fff;color:var(--text)}
+textarea{resize:vertical;min-height:110px}
+.btn-submit{
+  align-self:flex-start;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 32px;border-radius:8px;
+  background:var(--blue);color:#fff;
+  border:none;font-family:'Sora',sans-serif;
+  font-size:14px;font-weight:500;cursor:pointer;
+  transition:all .2s;
+}
+.btn-submit:hover{
+  background:var(--blue-mid);
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(26,58,92,0.2);
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:32px 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-logo{
+  font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:.06em;text-transform:uppercase;
+}
+.footer-logo span{color:var(--accent)}
+footer p{font-size:12px;color:var(--text-mute)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{
+  font-size:12px;color:var(--text-mute);
+  text-decoration:none;transition:color .2s;
+}
+.footer-links a:hover{color:var(--text)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 20px}
+  nav ul{display:none}
+  #hero{grid-template-columns:1fr;padding:64px 20px 48px;gap:40px}
+  .section-inner{padding:64px 20px}
+  .stats-strip{padding:24px 20px;gap:0;flex-wrap:wrap}
+  .stat-item{padding:16px 24px;border-right:none;border-bottom:1px solid var(--border);width:50%}
+  .stat-item:nth-child(odd){border-right:1px solid var(--border)}
+  .services-grid{grid-template-columns:1fr}
+  .project-feature{grid-template-columns:1fr;gap:32px}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .field-group{grid-template-columns:1fr}
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start;gap:20px}
+  .services-top,.process-top{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">PERMIT PATH<span>.</span>ONTARIO</a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="index.html">Restaurant Design</a></li>
+    <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div>
+    <div class="hero-badge">BCIN Registered Designer · GTA (Greater Toronto Area), ON</div>
+    <h1>Your Permit, <em>Approved.</em></h1>
+    <p class="hero-desc">We handle the full journey — from feasibility check and AutoCAD drawings to signed BCIN documents and City approval. No architect markup. No delays. Just results.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a free feasibility check →</a>
+      <a href="#services" class="btn-ghost">See our services</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="blueprint.png" alt="North Elevation Blueprint — Permit Path Ontario"/>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-n">100%</div><div class="stat-l">Permit approval rate</div></div>
+  <div class="stat-item"><div class="stat-n">BCIN</div><div class="stat-l">Registered · MMAH certified</div></div>
+  <div class="stat-item"><div class="stat-n">GTA</div><div class="stat-l">Toronto · Mississauga · Oakville</div></div>
+  <div class="stat-item"><div class="stat-n">Free</div><div class="stat-l">Preliminary feasibility check</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-top">
+      <div>
+        <div class="sec-label">What we do</div>
+        <h2>One call covers it <em>all</em></h2>
+      </div>
+      <p class="section-desc" style="margin:0">As a BCIN Registered Designer, we can independently sign and submit drawings — no architect or engineer markup required for Part 9 residential projects.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="s-num">01</div>
+        <div class="s-icon">⬡</div>
+        <h3>Legal Basement Suite</h3>
+        <p>Full permit package for basement apartment legalization — drawings, OBC compliance, egress windows, and City submission. Flat-fee from $2,500.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">02</div>
+        <div class="s-icon">◎</div>
+        <h3>Garden Suite / ADU</h3>
+        <p>End-to-end design and permit application for laneway and garden suites. Site plan, grading, and utility coordination included. From $6,000.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">03</div>
+        <div class="s-icon">▦</div>
+        <h3>Home Addition &amp; Extension</h3>
+        <p>Second-storey additions, rear extensions, and garage conversions. We handle zoning review, structural coordination, and full permit drawings.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">04</div>
+        <div class="s-icon">❋</div>
+        <h3>Deck, Porch &amp; Detached Garage</h3>
+        <p>Fast-turnaround permit packages for decks, covered porches, and detached garages. Straightforward pricing from $1,200.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">05</div>
+        <div class="s-icon">⬚</div>
+        <h3>As-Built &amp; Existing Conditions</h3>
+        <p>Laser-measured as-built drawings for older properties — essential for renovations, sales, and permit legalization of prior work.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">06</div>
+        <div class="s-icon">✦</div>
+        <h3>Zoning &amp; Variance Consulting</h3>
+        <p>Feasibility analysis against local zoning by-laws, Committee of Adjustment support, and Minor Variance applications for Peel Region municipalities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="border-top:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="sec-label">Selected work</div>
+    <h2>Permitted &amp; <em>Built</em></h2>
+    <div class="project-feature">
+      <div class="project-img-wrap">
+        <img src="blueprint.png" alt="North Elevation — Residential Blueprint"/>
+      </div>
+      <div>
+        <div class="project-tag-row">
+          <span class="tag">Residential</span>
+          <span class="tag">New Build</span>
+          <span class="tag">Mississauga, ON</span>
+        </div>
+        <h3>Runnymede Residence</h3>
+        <p>A contemporary two-storey infill home in Mississauga's mature west end. We prepared the full permit drawing set — site plan, floor plans, all four elevations, building sections, and BCIN-signed energy compliance — and managed the City review through to permit issuance in under six weeks.</p>
+        <div class="project-detail-list">
+          <div class="dl-item"><span class="dl-key">Location</span><span class="dl-val">Mississauga, Ontario</span></div>
+          <div class="dl-item"><span class="dl-key">Type</span><span class="dl-val">Residential new build</span></div>
+          <div class="dl-item"><span class="dl-key">Size</span><span class="dl-val">2,800 sq ft · Part 9</span></div>
+          <div class="dl-item"><span class="dl-key">Permit issued</span><span class="dl-val">2024 · 6-week turnaround</span></div>
+          <div class="dl-item"><span class="dl-key">Scope</span><span class="dl-val">Full drawings + BCIN sign-off</span></div>
+        </div>
+        <a href="#contact" class="btn-ghost">Start a similar project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="process-top">
+      <div>
+        <div class="sec-label">How we work</div>
+        <h2>Permit in hand, <em>stress-free</em></h2>
+      </div>
+      <p class="section-desc" style="margin:0">We manage every step so you don't have to chase the City. Most residential permits in GTA (Greater Toronto Area) are issued within 4 – 8 weeks of a complete submission.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step-card">
+        <div class="step-n">Step 01</div>
+        <h4>Free Feasibility Check</h4>
+        <p>We review your address, zoning by-law, and project idea at no charge — and tell you exactly what's possible before you spend a dollar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">Step 02</div>
+        <h4>Site Measurement</h4>
+        <p>We visit your property and take precise laser measurements. Existing conditions are documented in AutoCAD as the foundation for all drawings.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">Step 03</div>
+        <h4>BCIN Drawing Set</h4>
+        <p>We produce a complete OBC-compliant drawing package and sign it with our BCIN number — no architect or engineer required for Part 9 homes.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">Step 04</div>
+        <h4>City Submission</h4>
+        <p>We submit the application, pay on your behalf, and track the file. We handle all examiner comments and resubmissions until approval.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">Step 05</div>
+        <h4>Permit Issued</h4>
+        <p>You receive the permit and are ready to build. We remain available to answer contractor questions throughout construction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="sec-label">About us</div>
+    <h2>Your local <em>BCIN expert</em></h2>
+    <div class="about-grid">
+      <div class="about-left">
+        <p>Permit Path Ontario is a BCIN-registered design practice based in Mississauga, serving homeowners and contractors across the Peel Region and Greater Toronto Area. We specialise exclusively in residential building permit applications under Part 9 of the Ontario Building Code.</p>
+        <p>Because we hold our own BCIN number, we can independently prepare, sign, and submit permit drawings — cutting out the architect or engineer middleman and passing those savings directly to you. Our clients are homeowners adding basement suites, contractors needing fast drawing turnarounds, and realtors assessing expansion potential before an offer.</p>
+        <div class="about-stats">
+          <div class="as-box"><div class="as-n">BCIN</div><div class="as-l">Registered with MMAH</div></div>
+          <div class="as-box"><div class="as-n">Part 9</div><div class="as-l">OBC residential specialist</div></div>
+          <div class="as-box"><div class="as-n">Peel</div><div class="as-l">Mississauga · Brampton · Oakville</div></div>
+          <div class="as-box"><div class="as-n">Free</div><div class="as-l">Feasibility check, no obligation</div></div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="values-list">
+          <div class="value-item">
+            <h4>No hidden markups</h4>
+            <p>Our BCIN designation means you never pay an architect or engineer to countersign drawings for standard residential projects. What you see in our quote is what you pay.</p>
+          </div>
+          <div class="value-item">
+            <h4>We know the local zoning</h4>
+            <p>We stay current with Mississauga, Brampton, and Oakville zoning by-laws so we can tell you upfront what's approvable — and how to maximise your legal building envelope.</p>
+          </div>
+          <div class="value-item">
+            <h4>Fast turnaround, real accountability</h4>
+            <p>We commit to drawing delivery timelines in writing. If the City comes back with comments, we respond — at no additional charge — until your permit is in hand.</p>
+          </div>
+          <div class="value-item">
+            <h4>B2B-friendly white-label service</h4>
+            <p>Contractors and realtors: we work quietly in the background as your design department. Volume pricing available for recurring referral partners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="sec-label">Get in touch</div>
+    <h2>Start with a <em>free feasibility check</em></h2>
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h3>Tell us your address and project idea — we'll tell you what's possible, at no charge.</h3>
+        <p>Whether you're a homeowner with a basement idea, a contractor needing drawings fast, or a realtor evaluating a property's potential, we respond within one business day.</p>
+        <div class="contact-chips">
+          <div class="chip">
+            <div class="chip-icon">✉</div>
+            <div class="chip-body"><div class="chip-label">Email</div><div class="chip-val">zfonline626@gmail.com</div></div>
+          </div>
+          <div class="chip">
+            <div class="chip-icon">✆</div>
+            <div class="chip-body"><div class="chip-label">Phone</div><div class="chip-val">+1 (416) 303-7888</div></div>
+          </div>
+          <div class="chip">
+            <div class="chip-icon">◎</div>
+            <div class="chip-body"><div class="chip-label">Service area</div><div class="chip-val">Mississauga · Brampton · Oakville<br>and Greater Toronto Area</div></div>
+          </div>
+          <div class="chip">
+            <div class="chip-icon">◷</div>
+            <div class="chip-body"><div class="chip-label">Hours</div><div class="chip-val">Mon – Fri · 9 AM – 6 PM EST</div></div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="field-group">
+          <div class="field"><label>First name</label><input type="text" name="first_name" placeholder="John" required/></div>
+          <div class="field"><label>Last name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
+        </div>
+        <div class="field"><label>Email address</label><input type="email" name="email" placeholder="you@email.com" required/></div>
+        <div class="field"><label>Property address</label><input type="text" name="property_address" placeholder="123 Elm St, Mississauga, ON"/></div>
+        <div class="field">
+          <label>Project type</label>
+          <select name="project_type">
+            <option value="" disabled selected>Select a project type</option>
+            <option>Legal Basement Suite</option>
+            <option>Garden Suite / ADU</option>
+            <option>Home Addition or Extension</option>
+            <option>Deck, Porch or Detached Garage</option>
+            <option>As-Built Drawings</option>
+            <option>Zoning / Variance Consulting</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label>Tell us about your project</label><textarea name="message" placeholder="Describe what you'd like to build, your timeline, and any concerns about zoning or code compliance..."></textarea></div>
+        <button type="submit" class="btn-submit">Send message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">PERMIT PATH<span>.</span>ONTARIO</div>
+    <p style="margin-top:6px">© 2025 Permit Path Ontario · GTA (Greater Toronto Area), Ontario, Canada</p>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="index.html">Restaurant Design</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const data = new FormData(form);
+  data.append('_subject', 'New enquiry — Permit Path Ontario');
+  data.append('_captcha', 'false');
+
+  fetch('https://formsubmit.co/ajax/05b396f2cf9626d54402c41dd684e426', {
+    method: 'POST',
+    headers: {'Accept': 'application/json'},
+    body: data
+  })
+  .then(r => r.json())
+  .then(res => {
+    if(res.success === 'true' || res.success === true){
+      btn.textContent = 'Message sent ✓';
+      btn.style.background = '#2a7a4b';
+      form.reset();
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Send message →';
+      alert('Something went wrong. Please try again or call us directly.');
+    }
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.textContent = 'Send message →';
+    alert('Network error. Please try again or call us directly.');
+  });
+}
+</script>
+</body>
+</html>
